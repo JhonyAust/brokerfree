@@ -10,6 +10,7 @@ import Interior from '../components/home/Iterior';
 import BuilderProjects from '../components/home/BuilderProjects';
 import LegalServices from '../components/home/LegalServices';
 import NRB from '../components/home/NRB';
+import CheckLoan from '../components/home/CheckLoan';
 const Home = () => {
   const [activeFilter, setActiveFilter] = useState('Buy'); // Manage the active filter state
 
@@ -25,6 +26,7 @@ const Home = () => {
       <LegalServices/>
       <Interior/>
       <NRB/>
+      <CheckLoan/>
       {/* You can add more conditions for other filters */}
     </ScrollView>
   );
