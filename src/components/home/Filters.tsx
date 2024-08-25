@@ -1,6 +1,9 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, TextInput, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../navigation/types'; // Update the import path to your types
 
 interface FiltersProps {
   setActiveFilter: (filter: string) => void;
@@ -8,9 +11,16 @@ interface FiltersProps {
 }
 
 const Filters: React.FC<FiltersProps> = ({ setActiveFilter, activeFilter }) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>(); // Use StackNavigationProp
+
   const handleButtonPress = (button: string) => {
     setActiveFilter(button);
   };
+
+  const handleSearchPress = () => {
+    navigation.navigate('Search'); // Navigate to the Search screen
+  };
+
 
   return (
     <View style={styles.container}>
@@ -34,7 +44,7 @@ const Filters: React.FC<FiltersProps> = ({ setActiveFilter, activeFilter }) => {
       </View>
 
       <View style={styles.searchContainer}>
-        <TouchableOpacity style={styles.searchButton}>
+        <TouchableOpacity style={styles.searchButton} onPress={handleSearchPress}>
           
           <TextInput
             placeholder="Search..."

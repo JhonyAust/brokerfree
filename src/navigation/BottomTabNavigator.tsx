@@ -4,12 +4,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'; 
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
-import Search from '../screens/Search';
 import Property from '../screens/Property'; // Import the Property screen
 import PlusButton from '../components/PlusButton'; // Custom component for the middle button
 import { TouchableOpacity } from 'react-native';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
-
+import HomeServices from '../screens/HomeServices';
 const Tab = createBottomTabNavigator();
 
 const EmptyComponent = () => null;
@@ -30,9 +29,9 @@ const BottomTabNavigator = () => {
             case 'Profile':
               iconName = focused ? 'person' : 'person-outline';
               break;
-            case 'Search':
-              iconName = focused ? 'search' : 'search-outline';
-              break;
+              case 'Services':
+                iconName = focused ? 'cogs' : 'cogs';
+                break;
             case 'Property':
               iconName = 'list'; // FontAwesome icon name
               break;
@@ -40,7 +39,7 @@ const BottomTabNavigator = () => {
               iconName = ''; // Default empty string if no match
           }
 
-          if (route.name === 'Property') {
+          if (route.name === 'Property' || route.name === 'Services') {
             return <FontAwesome name={iconName} size={size} color={color} />;
           }
 
@@ -70,7 +69,7 @@ const BottomTabNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="Services" component={HomeServices} />
       <Tab.Screen 
         name="Plus" 
         component={EmptyComponent} 

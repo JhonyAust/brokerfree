@@ -12,6 +12,8 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-community/slider": "^4.5.2",
+    "@react-native-picker/picker": "^2.7.7",
     "@react-native-vector-icons/fontawesome": "^4.7.0-alpha.25",
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/drawer": "^6.7.2",

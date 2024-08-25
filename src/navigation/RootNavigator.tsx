@@ -7,6 +7,7 @@ import SignUp from '../screens/SignUp';
 import DrawerNavigator from './DrawerNavigator';
 import { RootStackParamList } from './types';
 import { RootState } from '../store/rootReducer';
+import Search from '../screens/Search';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -29,11 +30,17 @@ const RootNavigator: React.FC = () => {
           options={{ headerShown: false }} 
         />
         {currentUser && (
+          <>
           <Stack.Screen
             name="MainTabs"
             component={DrawerNavigator}
             options={{ headerShown: false }} 
           />
+          <Stack.Screen
+          name="Search"
+          component={Search}
+        />
+        </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

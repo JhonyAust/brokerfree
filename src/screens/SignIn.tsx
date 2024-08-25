@@ -35,8 +35,9 @@ const SignIn: React.FC = () => {
       }
       
       const data = await res.json();
-  
+      console.log("Tokon is: ",data.token);
       if (data.token) {
+        console.log("Hello Test");
         dispatch(signInSuccess(data));
         navigation.navigate('MainTabs', { screen: 'Home' });
       } else {

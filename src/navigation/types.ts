@@ -4,6 +4,7 @@ export type RootStackParamList = {
     SignUp: undefined;
     Home: undefined;
     Profile:undefined;
+    Search:undefined;
     MainTabs: { screen?: string };
   };
   
