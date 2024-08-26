@@ -8,6 +8,8 @@ import DrawerNavigator from './DrawerNavigator';
 import { RootStackParamList } from './types';
 import { RootState } from '../store/rootReducer';
 import Search from '../screens/Search';
+import Listings from '../screens/Listings';
+import Filter from '../screens/Filter';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -39,6 +41,14 @@ const RootNavigator: React.FC = () => {
           <Stack.Screen
           name="Search"
           component={Search}
+        />
+          <Stack.Screen
+          name="Listings"
+          component={Listings}
+        />
+        <Stack.Screen
+          name="Filter"
+          component={Filter}
         />
         </>
         )}

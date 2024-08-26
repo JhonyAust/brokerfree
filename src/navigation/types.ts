@@ -5,6 +5,8 @@ export type RootStackParamList = {
     Home: undefined;
     Profile:undefined;
     Search:undefined;
+    Listings: { searchQuery: string }; 
     MainTabs: { screen?: string };
+    Filter:undefined;
   };
   
