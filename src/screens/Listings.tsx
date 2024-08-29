@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    marginTop:2,
   },
   subcontainer: {
     padding: 10,
@@ -149,10 +150,11 @@ const styles = StyleSheet.create({
     marginRight:15,
   },
   separator: {
-    height: '100%',
+    height: '80%',
     width: 1,
     backgroundColor: '#ccc', // Separator color
     marginHorizontal: 10, // Space between the buttons and the separator
+    
   },
   modalContainer: {
     flex: 1,

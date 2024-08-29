@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "62263380096",
+    "project_id": "mutual-mpl",
+    "storage_bucket": "mutual-mpl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62263380096:android:0fe1ff66de25c93a78fe65",
+        "android_client_info": {
+          "package_name": "com.brokerfree"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62263380096-khfofnllvcr8oott564cmadmqgeh311v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdceK4W0qjYvaZmu3RkOoF7nV4XpnXEDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62263380096-khfofnllvcr8oott564cmadmqgeh311v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

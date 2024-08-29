@@ -72,7 +72,7 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="Services" component={HomeServices} />
       <Tab.Screen 
         name="Plus" 
-        component={EmptyComponent} 
+        component={EmptyComponent} // This screen is not directly used
         options={{ 
           tabBarButton: (props) => <PlusButton {...props} /> 
         }} 

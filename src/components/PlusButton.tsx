@@ -1,20 +1,30 @@
-// src/components/PlusButton.tsx
 import React from 'react';
-import { TouchableOpacity, View, StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { RootStackParamList } from '../navigation/types';
 
-const PlusButton = (props: any) => {
+type NavigationProp = BottomTabNavigationProp<RootStackParamList, 'Plus'>;
+
+const PlusButton: React.FC = () => {
+  const navigation = useNavigation<NavigationProp>();
+
+  const handlePress = () => {
+    navigation.navigate('Address'); // Now TypeScript should understand this
+  };
+
   return (
-    <TouchableOpacity {...props} style={styles.button}>
-      <Icon name="add" size={24} color="#fff" />
+    <TouchableOpacity style={styles.button} onPress={handlePress}>
+      <Icon name="add" size={40} color="#fff" />
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    width: 60,
-    height: 60,
+    width: 55,
+    height: 55,
     borderRadius: 30,
     backgroundColor: '#FD3752',
     justifyContent: 'center',
@@ -24,6 +34,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 5,
+   
   },
 });
 
