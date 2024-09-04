@@ -4,12 +4,14 @@ export type RootStackParamList = {
   SignUp: undefined;
   Home: undefined;
   Profile: undefined;
+  PaintServices:undefined;
   Search: undefined;
   Listings: { searchQuery: string }; 
   MainTabs: { screen?: string };
   Filter: undefined;
   Plus:undefined;
   ListingConfirmation:undefined;
+  Services:undefined;
   Address: undefined; // No params passed
   Details: { address: string; saleOrRent: 'sale' | 'rent' }; // Params passed from Address screen
   Types: { 

@@ -8,13 +8,16 @@ import Property from '../screens/Property'; // Import the Property screen
 import PlusButton from '../components/PlusButton'; // Custom component for the middle button
 import { TouchableOpacity } from 'react-native';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
-import HomeServices from '../screens/HomeServices';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './types';
+
+type ServicesScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Services'>;
 const Tab = createBottomTabNavigator();
 
 const EmptyComponent = () => null;
 
 const BottomTabNavigator = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<ServicesScreenNavigationProp>();
 
   return (
     <Tab.Navigator
@@ -69,7 +72,16 @@ const BottomTabNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Services" component={HomeServices} />
+      <Tab.Screen 
+        name="Services" 
+        component={EmptyComponent} 
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate('Services'); // Navigate to HomeServices
+          },
+        }}
+      />
       <Tab.Screen 
         name="Plus" 
         component={EmptyComponent} // This screen is not directly used

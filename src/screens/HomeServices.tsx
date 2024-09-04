@@ -1,19 +1,29 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+// src/screens/Home.tsx
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import ServiceComponent from '../components/HomeServices/ServiceComponent';
+import ServiceOffer from '../components/HomeServices/ServiceOffer';
+import FaqService from '../components/HomeServices/FaqService';
+import PaintComponent from '../components/HomeServices/PaintComponent';
+import InteriorService from '../components/HomeServices/InteriorService';
 
 const HomeServices = () => {
+  
+
   return (
-    <View style={styles.container}>
-    <Text>HomeServices Screen</Text>
-  </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ServiceComponent/>
+      <ServiceOffer/>
+      <InteriorService/>
+      <PaintComponent/>
+      <FaqService/>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+   
   },
 });
 

@@ -15,6 +15,8 @@ import Details from '../screens/CreateListing/Details';
 import UploadImages from '../screens/CreateListing/UploadImages';
 import Types from '../screens/CreateListing/Types';
 import ListingConfirmation from '../screens/CreateListing/ListingConfirmation';
+import HomeServices from '../screens/HomeServices';
+import PaintServices from '../screens/PaintServices';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -60,7 +62,8 @@ const RootNavigator: React.FC = () => {
         <Stack.Screen name="Types" component={Types} />
         <Stack.Screen name="UploadImages" component={UploadImages} />
         <Stack.Screen name="ListingConfirmation" component={ListingConfirmation} />
-
+        <Stack.Screen name="Services" component={HomeServices} />
+        <Stack.Screen name="PaintServices" component={PaintServices} />
         </>
         )}
       </Stack.Navigator>
