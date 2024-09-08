@@ -17,6 +17,8 @@ import Types from '../screens/CreateListing/Types';
 import ListingConfirmation from '../screens/CreateListing/ListingConfirmation';
 import HomeServices from '../screens/HomeServices';
 import PaintServices from '../screens/PaintServices';
+import AddressSchedule from '../screens/GetEstimate/AddressSchedule';
+import ShareDetails from '../screens/GetEstimate/ShareDetails';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -59,6 +61,8 @@ const RootNavigator: React.FC = () => {
         />
         <Stack.Screen name="Address" component={Address} />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="AddressSchedule" component={AddressSchedule} />
+        <Stack.Screen name="ShareDetails" component={ShareDetails} />
         <Stack.Screen name="Types" component={Types} />
         <Stack.Screen name="UploadImages" component={UploadImages} />
         <Stack.Screen name="ListingConfirmation" component={ListingConfirmation} />

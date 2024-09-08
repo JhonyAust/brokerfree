@@ -12,6 +12,8 @@ export type RootStackParamList = {
   Plus:undefined;
   ListingConfirmation:undefined;
   Services:undefined;
+  AddressSchedule: undefined; // No params passed
+  ShareDetails: { address: string; dateTime:string }; 
   Address: undefined; // No params passed
   Details: { address: string; saleOrRent: 'sale' | 'rent' }; // Params passed from Address screen
   Types: { 

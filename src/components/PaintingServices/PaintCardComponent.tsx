@@ -12,6 +12,11 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../navigation/types';
+type PaintCardComponentNavigationProp = StackNavigationProp<RootStackParamList, 'AddressSchedule'>;
+
 
 const { height } = Dimensions.get('window');
 interface CardData {
@@ -26,7 +31,7 @@ interface CardData {
 const PaintCardComponent = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedCard, setSelectedCard] = useState<CardData | null>(null);
-
+  const navigation = useNavigation<PaintCardComponentNavigationProp>();
   const handleOpenPopup = (card: CardData) => {
     setSelectedCard(card);
     setModalVisible(true);
@@ -38,6 +43,13 @@ const PaintCardComponent = () => {
   };
   const handleOutsidePress = () => {
     handleClosePopup();
+  };
+  const handleEstimatePress = () => {
+    navigation.navigate('AddressSchedule');  
+  };
+  const handleCheckPrice = () => {
+    console.log("Check Price button pressed!");
+    //navigation.navigate('AddressSchedule');  
   };
   const cardsData : CardData[] = [
     {
@@ -155,11 +167,15 @@ const PaintCardComponent = () => {
                 <Text style={styles.showMoreButtonText}>See All</Text>
                 <Icon name="angle-right" size={20} color="gray" />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.getEstimateButton}>
+              <TouchableOpacity 
+                style={styles.getEstimateButton} 
+                onPress={card.buttonName2 === 'CHECK PRICES' ? handleCheckPrice : handleEstimatePress}
+              >
                 <Text style={styles.getEstimateButtonText}>
                   {card.buttonName2}
                 </Text>
               </TouchableOpacity>
+
             </View>
           </View>
         ))}
@@ -248,7 +264,7 @@ const PaintCardComponent = () => {
 
             <TouchableOpacity 
                 style={styles.actionButton}
-                onPress={handleClosePopup}
+                onPress={handleEstimatePress}
               >
                 <Text style={styles.actionButtonText}>
                   {selectedCard?.buttonName2 || 'Close'}
