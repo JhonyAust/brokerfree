@@ -49,7 +49,7 @@ const PaintCardComponent = () => {
   };
   const handleCheckPrice = () => {
     console.log("Check Price button pressed!");
-    //navigation.navigate('AddressSchedule');  
+    navigation.navigate('PaintWallServices');  
   };
   const cardsData : CardData[] = [
     {

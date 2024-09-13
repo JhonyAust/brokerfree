@@ -5,12 +5,16 @@ export type RootStackParamList = {
   Home: undefined;
   Profile: undefined;
   PaintServices:undefined;
+  PaintWallServices:undefined;
+  MyPaintCart:undefined;
+  ShippingDetails:{ items: any; totalAmount:number }; 
   Search: undefined;
   Listings: { searchQuery: string }; 
   MainTabs: { screen?: string };
   Filter: undefined;
   Plus:undefined;
   ListingConfirmation:undefined;
+  PaintWallConfirmation:undefined;
   Services:undefined;
   AddressSchedule: undefined; // No params passed
   ShareDetails: { address: string; dateTime:string }; 
