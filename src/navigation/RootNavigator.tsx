@@ -23,6 +23,9 @@ import PaintWallServices from '../screens/PaintWallServices/PaintWallServices';
 import ShippingDetails from '../screens/PaintWallServices/ShippingDetails';
 import MyPaintCart from '../screens/PaintWallServices/MyPaintCart';
 import PaintWallConfirmation from '../screens/PaintWallServices/PaintWallConfirmation';
+import TenantPlans from '../screens/Plans/TenantPlans/TenantPlans';
+import CheckoutPlans from '../screens/Plans/CheckoutPlans';
+import PlansOrderConfirmation from '../screens/Plans/PlansOrderConfirmation';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -72,10 +75,13 @@ const RootNavigator: React.FC = () => {
         <Stack.Screen name="UploadImages" component={UploadImages} />
         <Stack.Screen name="ListingConfirmation" component={ListingConfirmation} />
         <Stack.Screen name="PaintWallConfirmation" component={PaintWallConfirmation} />
+        <Stack.Screen name="PlansOrderConfirmation" component={PlansOrderConfirmation} />
         <Stack.Screen name="Services" component={HomeServices} />
         <Stack.Screen name="PaintServices" component={PaintServices} />
         <Stack.Screen name="PaintWallServices" component={PaintWallServices} />
         <Stack.Screen name="MyPaintCart" component={MyPaintCart} />
+        <Stack.Screen name="TenantPlans" component={TenantPlans} />
+        <Stack.Screen name="CheckoutPlans" component={CheckoutPlans} />
         </>
         )}
       </Stack.Navigator>

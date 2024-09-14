@@ -2,14 +2,27 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'; // Use Ionicons for chevron icons
 import Menu from './Menu';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../navigation/types';
+
 const MenuComponent = () => {
     const [openSections, setOpenSections] = useState<number[]>([]);
     const [hoveredItem, setHoveredItem] = useState<number | null>(null); // Track hovered menu item
-  
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>(); // Use StackNavigationProp
+     
     const toggleSection = (id: number) => {
       setOpenSections((prev) =>
         prev.includes(id) ? prev.filter((sectionId) => sectionId !== id) : [...prev, id]
       );
+    };
+
+    const handlePress = (route: string) => {
+        if (route) {
+            navigation.navigate(route as any);
+        } else {
+            console.log("Route is not valid");
+        }
     };
   
     return (
@@ -39,10 +52,14 @@ const MenuComponent = () => {
             {openSections.includes(menuItem.id) && (
               <View style={styles.submenuContainer}>
                 {menuItem.submenu.map((subItem, index) => (
-                  <View key={index} style={styles.submenuItem}>
+                  <TouchableOpacity 
+                    key={index} 
+                    style={styles.submenuItem} 
+                    onPress={() => handlePress(subItem.route)} // Trigger navigation on press
+                  >
                     {subItem.icon}
                     <Text style={styles.submenuText}>{subItem.name}</Text>
-                  </View>
+                  </TouchableOpacity>
                 ))}
               </View>
             )}
@@ -50,8 +67,7 @@ const MenuComponent = () => {
         ))}
       </View>
     );
-  };
-  
+};
 
 const styles = StyleSheet.create({
   container: {

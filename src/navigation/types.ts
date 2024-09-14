@@ -13,8 +13,11 @@ export type RootStackParamList = {
   MainTabs: { screen?: string };
   Filter: undefined;
   Plus:undefined;
+  TenantPlans:undefined;
+  CheckoutPlans:{ plan:any};
   ListingConfirmation:undefined;
   PaintWallConfirmation:undefined;
+  PlansOrderConfirmation:undefined;
   Services:undefined;
   AddressSchedule: undefined; // No params passed
   ShareDetails: { address: string; dateTime:string }; 

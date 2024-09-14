@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   redSection: {
-    backgroundColor: '#FF0000',
+    backgroundColor: '#FD3752',
     padding: 16,
     alignItems: 'center',
   },

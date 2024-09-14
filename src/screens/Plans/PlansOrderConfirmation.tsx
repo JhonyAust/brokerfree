@@ -5,19 +5,19 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../navigation/types';
 
-type PaintWallConfirmationScreenNavigationProp = StackNavigationProp<RootStackParamList, 'PaintWallConfirmation'>;
+type PlansOrderConfirmationNavigationProp = StackNavigationProp<RootStackParamList, 'PlansOrderConfirmation'>;
 
 interface Props {
-  navigation: PaintWallConfirmationScreenNavigationProp;
+  navigation: PlansOrderConfirmationNavigationProp;
 }
 
-const PaintWallConfirmation: React.FC<Props> = ({ navigation }) => {
+const PlansOrderConfirmation: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Icon name="thumbs-up" size={80} color="#A479ED" style={styles.icon} />
       <Text style={styles.title}>Thanks for ordering</Text>
       <Text style={styles.subtitle}>Your order has been successfully submitted!</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PaintWallServices')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TenantPlans')}>
         <Text style={styles.buttonText}>Add Another Order</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonHome} onPress={() => navigation.navigate('MainTabs', { screen: 'Home' })}>
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PaintWallConfirmation;
+export default PlansOrderConfirmation;
