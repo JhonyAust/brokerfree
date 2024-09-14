@@ -5354,6 +5354,11 @@ react-native-vector-icons@^10.1.0:
     prop-types "^15.7.2"
     yargs "^16.1.1"
 
+react-native-web-hover@^0.2.9:
+  version "0.2.9"
+  resolved "https://registry.npmjs.org/react-native-web-hover/-/react-native-web-hover-0.2.9.tgz"
+  integrity sha512-6hXQMLptJPDn67xlgmA6eh42LWlHb2THjaedNqW5N8rwutEqsta/zoCYTAJNz+1U/tGW9ZrZVXitUnoLie/itQ==
+
 react-native@*, "react-native@^0.0.0-0 || >=0.60 <1.0", react-native@>=0.57, react-native@0.74.4:
   version "0.74.4"
   dependencies:

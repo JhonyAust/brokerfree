@@ -2,19 +2,22 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import BottomTabNavigator from './BottomTabNavigator';
-import Home from '../screens/Home';
-import SignIn from '../screens/SignIn';
+import CustomDrawer from '../components/DrawerComponent/CustomDrawerContent';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
-      screenOptions={{ headerShown: false }} // Hide header for all drawer screens
+      drawerContent={(props) => <CustomDrawer {...props} />}
+      screenOptions={{ 
+        headerShown: false,
+        drawerStyle: {
+          width: 350, // Set your desired width here
+        },
+       }} // Hide header for all drawer screens
     >
       <Drawer.Screen name="BROKERFREE" component={BottomTabNavigator} />
-      <Drawer.Screen name="SignIn" component={SignIn} />
     </Drawer.Navigator>
   );
 };

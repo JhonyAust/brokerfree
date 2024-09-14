@@ -1,7 +1,14 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../navigation/types';
 const PostProperty = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>(); // Use StackNavigationProp
+
+  const handlePostProperty = () => {
+    navigation.navigate('Address'); // Navigate to the Search screen
+  };
   return (
     <View style={styles.container}>
       {/* Left Side Section */}
@@ -19,7 +26,7 @@ const PostProperty = () => {
             <Text style={styles.featureText}>Pay ZERO brokerage</Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handlePostProperty}>
           <Text style={styles.buttonText}>Post Free Property Ad</Text>
         </TouchableOpacity>
       </View>
