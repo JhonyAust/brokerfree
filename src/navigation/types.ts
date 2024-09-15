@@ -14,6 +14,7 @@ export type RootStackParamList = {
   Filter: undefined;
   Plus:undefined;
   TenantPlans:undefined;
+  SellerPlans:undefined;
   CheckoutPlans:{ plan:any};
   ListingConfirmation:undefined;
   PaintWallConfirmation:undefined;

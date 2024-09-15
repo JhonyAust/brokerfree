@@ -26,6 +26,7 @@ const CheckoutPlans: React.FC<Props> = ({ navigation, route }) => {
     message: '',
     agreeTerms: false,
   });
+  console.log("Plan : ",plan);
 
   const handleChange = (name: keyof typeof formData, value: string | boolean) => {
     setFormData((prevFormData) => ({
@@ -45,10 +46,11 @@ const CheckoutPlans: React.FC<Props> = ({ navigation, route }) => {
       Alert.alert('Error', 'Please fill all the required fields.');
       return;
     }
+    console.log("Plan is here : ",plan);
 
     const orderData = {
         user: currentUser._id,
-        items: {title: plan.name,newCost:plan.price},
+        items: {title: plan.name?plan.name:plan.title,newCost:plan.price},
         price: plan.price,
         totalAmount: plan.price,
         shippingDetails: formData,

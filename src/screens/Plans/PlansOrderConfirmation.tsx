@@ -9,6 +9,7 @@ type PlansOrderConfirmationNavigationProp = StackNavigationProp<RootStackParamLi
 
 interface Props {
   navigation: PlansOrderConfirmationNavigationProp;
+  
 }
 
 const PlansOrderConfirmation: React.FC<Props> = ({ navigation }) => {
@@ -17,7 +18,7 @@ const PlansOrderConfirmation: React.FC<Props> = ({ navigation }) => {
       <Icon name="thumbs-up" size={80} color="#A479ED" style={styles.icon} />
       <Text style={styles.title}>Thanks for ordering</Text>
       <Text style={styles.subtitle}>Your order has been successfully submitted!</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TenantPlans')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MainTabs', { screen: 'Home' })}>
         <Text style={styles.buttonText}>Add Another Order</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonHome} onPress={() => navigation.navigate('MainTabs', { screen: 'Home' })}>
