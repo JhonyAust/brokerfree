@@ -18,7 +18,7 @@ const MenuComponent = () => {
     };
 
     const handlePress = (route: string) => {
-        if (route=="TenantPlans" || route==="SellerPlans") {
+        if (route=="TenantPlans" || route==="SellerPlans" || route==="MyOrders" || route==="MyPlansOrders" || route==="MyPaintOrders" || route==="MyListings") {
             navigation.navigate(route as any);
         } else {
             console.log("Route is not valid");

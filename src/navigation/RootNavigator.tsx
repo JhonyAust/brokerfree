@@ -27,6 +27,10 @@ import TenantPlans from '../screens/Plans/TenantPlans/TenantPlans';
 import CheckoutPlans from '../screens/Plans/CheckoutPlans';
 import PlansOrderConfirmation from '../screens/Plans/PlansOrderConfirmation';
 import SellerPlans from '../screens/Plans/SellerPlans/SellerPlans';
+import MyOrders from '../screens/MyOrders/MyOrders';
+import MyPaintOrders from '../screens/MyOrders/MyPaintOrders';
+import MyPlansOrders from '../screens/MyOrders/MyPlansOrders';
+import MyListings from '../screens/CreateListing/MyListings';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -84,6 +88,11 @@ const RootNavigator: React.FC = () => {
         <Stack.Screen name="TenantPlans" component={TenantPlans} />
         <Stack.Screen name="SellerPlans" component={SellerPlans} />
         <Stack.Screen name="CheckoutPlans" component={CheckoutPlans} />
+        <Stack.Screen name="MyOrders" component={MyOrders} />
+        <Stack.Screen name="MyPlansOrders" component={MyPlansOrders} />
+        <Stack.Screen name="MyPaintOrders" component={MyPaintOrders} />
+        <Stack.Screen name="MyListings" component={MyListings} />
+
         </>
         )}
       </Stack.Navigator>

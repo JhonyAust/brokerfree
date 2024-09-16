@@ -32,6 +32,9 @@ const Profile: React.FC = () => {
       dispatch(signOutFailure('An error occurred during sign-out.'));
     }
   };
+  const handleMyOrders = () => {
+    navigation.navigate('MyOrders');
+  };
 
   return (
     <View style={styles.container}>
@@ -39,6 +42,9 @@ const Profile: React.FC = () => {
       <Text style={styles.email}>{currentUser?.email}</Text>
       <TouchableOpacity onPress={handleSignOut} style={styles.logoutButton}>
         <Text style={styles.logoutButtonText}>Logout</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleMyOrders} style={styles.MyOrdersButton}>
+        <Text style={styles.MyOrdersButtonText}>My Orders</Text>
       </TouchableOpacity>
     </View>
   );
@@ -67,6 +73,18 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   logoutButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  MyOrdersButton: {
+    backgroundColor: '#FD3752',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginTop:20,
+  },
+  MyOrdersButtonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',

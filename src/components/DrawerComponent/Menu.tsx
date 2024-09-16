@@ -1,18 +1,44 @@
 import React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons'; // For 'Bi' icons
-import FontAwesome from 'react-native-vector-icons/FontAwesome5'; // For 'Fa' icons
+import Ionicons from 'react-native-vector-icons/Ionicons'; 
+import FontAwesome from 'react-native-vector-icons/FontAwesome5'; 
 
 const Menu = [
   {
-    id: 1,
-    menu: "MAcash Wallet",
+  id: 1,
+  menu: "My Services",
+  submenu: [
+    {
+      name: "My Bookings",
+      icon: <FontAwesome name="calendar-check" size={20} color="#676BB3" />, 
+      route: "MyOrders"
+  },
+  {
+      name: "My Paint Orders",
+      icon: <FontAwesome name="paint-brush" size={20} color="#676BB3" />, 
+      route: "MyPaintOrders"
+  },
+  {
+      name: "My Plans Orders",
+      icon: <FontAwesome name="clipboard-list" size={20} color="#676BB3" />, 
+      route: "MyPlansOrders"
+  },
+  {
+      name: "My Property Listing",
+      icon: <FontAwesome name="city" size={20} color="#676BB3" />, 
+      route: "MyListings"
+  }
+  ]
+},
+  {
+    id: 2,
+    menu: "BROKERFREE Wallet",
     submenu: [
       { name: "Wallet Summary", icon: <Ionicons name="book-outline" size={20} color="#000" />, route: "WalletSummary" },
       { name: "RewardsNew", icon: <FontAwesome name="hand-holding-usd" size={20} color="#000" />, route: "RewardsNew" }
     ]
   },
   {
-    id: 2,
+    id: 3,
     menu: "Residential Plans",
     submenu: [
       { name: "For Owner", icon: <FontAwesome name="user-tie" size={20} color="#000" />, route: "OwnerPlans" },
@@ -22,7 +48,7 @@ const Menu = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     menu: "Commercial Plans",
     submenu: [
       { name: "For Owner", icon: <FontAwesome name="user-tie" size={20} color="#000" />, route: "CommercialOwnerPlans" },
@@ -32,7 +58,7 @@ const Menu = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     menu: "Home Services",
     submenu: [
       { name: "Packers and Movers", icon: <FontAwesome name="truck" size={20} color="#000" />, route: "PackersMovers" },
@@ -43,7 +69,7 @@ const Menu = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     menu: "BROKERFREE Pay",
     submenu: [
       { name: "Pay Your Rent", icon: <FontAwesome name="file-signature" size={20} color="#000" />, route: "PayRent" },
@@ -53,7 +79,7 @@ const Menu = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     menu: "Legal Assistance & Loan",
     submenu: [
       { name: "Rental Agreement", icon: <FontAwesome name="file-contract" size={20} color="#000" />, route: "RentalAgreement" },
@@ -65,7 +91,7 @@ const Menu = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     menu: "Utilities",
     submenu: [
       { name: "Know Your Rent", icon: <FontAwesome name="receipt" size={20} color="#000" />, route: "KnowRent" },
@@ -74,7 +100,7 @@ const Menu = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     menu: "Help & Support",
     submenu: [
       { name: "Support Topics", icon: <Ionicons name="chatbox-outline" size={20} color="#000" />, route: "SupportTopics" },
